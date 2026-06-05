@@ -1,4 +1,3 @@
-
 // Tasks
 // fix button hover inherit delay 
 
@@ -197,3 +196,14 @@ writingJournalism.addEventListener("mouseleave", function(e) {
 }
 )
 
+const journalismPublications = document.getElementById("journalism-publications");
+
+writingJournalism.addEventListener("click", function() {
+    if (journalismPublications.classList.contains("invisible")) {
+        journalismPublications.classList.remove("invisible");
+        journalismPublications.classList.add("visible");
+    } else {
+        journalismPublications.classList.remove("visible");
+        journalismPublications.classList.add("invisible");
+    }
+});
