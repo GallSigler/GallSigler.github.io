@@ -1,186 +1,74 @@
-const projects = document.getElementById("projects")
-const writing = document.getElementById("writing")
-const resume = document.getElementById("resume")
-const writingJournalism = document.getElementById("writing-journalism")
-const writingAcademic = document.getElementById("writing-academic")
-const writingBlock = document.getElementById("writing-text")
-const projectsBlock = document.getElementById("project-text")
-const journalismPublications = document.getElementById("journalism-publications")
-const academicPublications = document.getElementById("academic-publications")
+// Navigation Triggers
+const projectsBtn = document.getElementById("projects");
+const writingBtn = document.getElementById("writing");
+const journalismBtn = document.getElementById("journalism-btn");
+const academicBtn = document.getElementById("academic-btn");
+const globalBackBtn = document.getElementById("global-back-btn");
 
-function pageMove(path){
-    window.open(path, '_blank');
+// View Container DOM Nodes
+const lowerDrawer = document.getElementById("dynamic-lower-drawer");
+const projectsContent = document.getElementById("projects-content");
+const writingMenu = document.getElementById("writing-menu");
+const journalismContent = document.getElementById("journalism-content");
+const academicContent = document.getElementById("academic-content");
+
+// Global Navigation State Tracker
+let currentView = "closed"; 
+
+function clearAllViews() {
+    projectsContent.classList.add("invisible");
+    writingMenu.classList.add("invisible");
+    journalismContent.classList.add("invisible");
+    academicContent.classList.add("invisible");
 }
 
-let writingcounter=0; 
-let projectscounter=0; 
+// Top Menu Operations
+projectsBtn.addEventListener("click", function() {
+    clearAllViews();
+    lowerDrawer.classList.remove("invisible");
+    lowerDrawer.classList.add("visible");
+    projectsContent.classList.remove("invisible");
+    currentView = "projects";
+});
 
-const buttonsContainer=document.getElementById("buttons-container"); 
+writingBtn.addEventListener("click", function() {
+    clearAllViews();
+    lowerDrawer.classList.remove("invisible");
+    lowerDrawer.classList.add("visible");
+    writingMenu.classList.remove("invisible");
+    currentView = "writing-main";
+});
 
-buttonsContainer.addEventListener("click", function(e){ 
-    const temp = e.target.getAttribute('id'); 
+// Deep Submenu Controls (Journalism / Academic)
+journalismBtn.addEventListener("click", function() {
+    clearAllViews();
+    journalismContent.classList.remove("invisible");
+    currentView = "journalism-list";
+});
 
-    if (temp=="writing"){
-        if (projectsBlock.classList.contains("visible")){
-            projectsBlock.classList.remove("visible");
-            projectsBlock.classList.add("invisible");
-            projectscounter=0;    
-        }
+academicBtn.addEventListener("click", function() {
+    clearAllViews();
+    academicContent.classList.remove("invisible");
+    currentView = "academic-list";
+});
 
-        writingcounter+=1; 
-
-        if (writingcounter==1){
-            writingBlock.classList.remove("invisible");
-            writingBlock.classList.add("visible");
-        }
-
-        if (writingcounter==2){
-            writingBlock.classList.remove("visible");
-            writingBlock.classList.add("invisible");
-            writingcounter=0; 
-            journalismPublications.classList.remove("visible");
-            journalismPublications.classList.add("invisible");
-            academicPublications.classList.remove("visible");
-            academicPublications.classList.add("invisible");
-        }
-    }
-
-    if (temp=="projects"){
-        if (writingBlock.classList.contains("visible")){
-            writingBlock.classList.remove("visible");
-            writingBlock.classList.add("invisible");
-            writingcounter=0;    
-            journalismPublications.classList.remove("visible");
-            journalismPublications.classList.add("invisible");
-            academicPublications.classList.remove("visible");
-            academicPublications.classList.add("invisible");
-        }
-
-        projectscounter+=1; 
-
-        if (projectscounter==1){
-            projectsBlock.classList.remove("invisible");
-            projectsBlock.classList.add("visible");
-        }
-
-        if (projectscounter==2){
-            projectsBlock.classList.remove("visible");
-            projectsBlock.classList.add("invisible");
-            projectscounter=0; 
-        }
-    }
-})
-
-resume.addEventListener("click", function(e) {
-    e.preventDefault();
-    pageMove("resume-2026.pdf");
-})
-
-const backWriting=document.getElementById("writing-back-button")
-backWriting.addEventListener("click", function() {
-    writingBlock.classList.remove("visible");
-    writingBlock.classList.add("invisible");
-    writingcounter=0; 
-    journalismPublications.classList.remove("visible");
-    journalismPublications.classList.add("invisible");
-    academicPublications.classList.remove("visible");
-    academicPublications.classList.add("invisible");
-})
-
-const backProjects=document.getElementById("project-back-button")
-backProjects.addEventListener("click", function() {
-    projectsBlock.classList.remove("visible");
-    projectsBlock.classList.add("invisible");
-    projectscounter=0;
-})
-
-writing.addEventListener("mouseover", function(e) {
-    e.target.style.background = '#FADADD'; 
-    e.target.style.fontWeight = 'bold'; 
-})
-
-writing.addEventListener("mouseleave", function(e) {
-    e.target.style.background = 'white'; 
-    e.target.style.fontWeight = 'normal'; 
-})
-
-projects.addEventListener("mouseover", function(e) {
-    e.target.style.background = '#FADADD'; 
-    e.target.style.fontWeight = 'bold'; 
-})
-
-projects.addEventListener("mouseleave", function(e) {
-    e.target.style.background = 'white'; 
-    e.target.style.fontWeight = 'normal'; 
-})
-
-writingAcademic.addEventListener("mouseover", function(e) {
-    e.target.style.background = '#FADADD'; 
-    e.target.style.fontWeight = 'bold'; 
-})
-
-writingAcademic.addEventListener("mouseleave", function(e) {
-    e.target.style.background = 'white'; 
-    e.target.style.fontWeight = 'normal'; 
-})
-
-writingJournalism.addEventListener("mouseover", function(e) {
-    e.target.style.background = '#FADADD'; 
-    e.target.style.fontWeight = 'bold'; 
-})
-
-writingJournalism.addEventListener("mouseleave", function(e) {
-    e.target.style.background = 'white'; 
-    e.target.style.fontWeight = 'normal'; 
-})
-
-writingJournalism.addEventListener("click", function() {
-    academicPublications.classList.remove("visible");
-    academicPublications.classList.add("invisible");
-    if (journalismPublications.classList.contains("invisible")) {
-        journalismPublications.classList.remove("invisible");
-        journalismPublications.classList.add("visible");
-    } else {
-        journalismPublications.classList.remove("visible");
-        journalismPublications.classList.add("invisible");
+// Dynamic Back Navigation Handler Block
+globalBackBtn.addEventListener("click", function() {
+    if (currentView === "projects" || currentView === "writing-main") {
+        lowerDrawer.classList.remove("visible");
+        lowerDrawer.classList.add("invisible");
+        clearAllViews();
+        currentView = "closed";
+    } else if (currentView === "journalism-list" || currentView === "academic-list") {
+        clearAllViews();
+        writingMenu.classList.remove("invisible");
+        currentView = "writing-main";
     }
 });
 
-writingAcademic.addEventListener("click", function() {
-    journalismPublications.classList.remove("visible");
-    journalismPublications.classList.add("invisible");
-    if (academicPublications.classList.contains("invisible")) {
-        academicPublications.classList.remove("invisible");
-        academicPublications.classList.add("visible");
-    } else {
-        academicPublications.classList.remove("visible");
-        academicPublications.classList.add("invisible");
-    }
-});
-
-
-// --- STANDALONE RANDOM PHOTO SELECTOR SYSTEM ---
+/* Cat Generator Module */
 const randomPhotoBtn = document.getElementById("random-photo-btn");
 const photoDisplayArea = document.getElementById("photo-display-area");
-
-// String names matching the exact filenames saved inside your 'gal-photos' folder directory
-const photoGallery = [
-    "photo1.png",
-    "photo2.png",
-    "photo3.png",
-    "photo4.png",
-    "photo5.png"
-];
-
-randomPhotoBtn.addEventListener("mouseover", function(e) {
-    e.target.style.background = '#FADADD'; 
-    e.target.style.fontWeight = 'bold'; 
-});
-
-randomPhotoBtn.addEventListener("mouseleave", function(e) {
-    e.target.style.background = 'white'; 
-    e.target.style.fontWeight = 'normal'; 
-});
 
 randomPhotoBtn.addEventListener("click", function() {
     const totalPhotosInFolder = 12; 
@@ -188,8 +76,8 @@ randomPhotoBtn.addEventListener("click", function() {
     const chosenPhoto = `gal${randomNumber}.jpg`;    
     
     photoDisplayArea.innerHTML = `
-        <div style="margin-top: 15px; display: flex; justify-content: center;">
-            <img src="gal-photos/${chosenPhoto}" alt="Random Selection" style="width: 110px; height: 110px; object-fit: cover; border: 1px solid rgba(0,0,0,0.3); border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+        <div style="margin-top: 15px; display: flex; justify-content: center; align-items: center; width: 100%;">
+            <img src="gal-photos/${chosenPhoto}" alt="Cat Photo" style="width: 110px; height: 110px; object-fit: cover; border: 1px solid rgba(0,0,0,0.1); border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: block;">
         </div>
     `;
 });

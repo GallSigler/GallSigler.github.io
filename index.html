@@ -1,153 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gall Sigler</title>
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gall Sigler</title>
     
-        <link rel="stylesheet" href="styles.css?v=2">
-    </head>
-    <body>
-        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+
+    <div class="page-alignment-container">
+
         <div class="constant-lightest portfolio-card-wrapper">
-    
+            
             <div class="portfolio-main-column">
-                <div id="main-title">
-                    <div>
-                        <h1>Welcome to my site!</h1>
-                        <p>Below I include some information about my data projects, academic publications, and journalistic writing.</p>
-                        <p><b>This site also aims to demonstrate self-taught skills in HTML, CSS and JavaScript. (The code for the site is available in the projects section, too.)</b></p>
-                        
-                        <div id="social-links-container">
-                            <a href="https://github.com/yourusername" target="_blank" class="social-link">GitHub</a>
-                            <span class="link-separator">•</span>
-                            <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">LinkedIn</a>
-                            <span class="link-separator">•</span>
-                            <a href="#" id="resume" class="social-link">Resume</a>
-                        </div>
-                    </div>
+                <h1>Welcome to my site!</h1>
+                <p class="site-description">Below I include some information about my data projects, academic publications, and journalistic writing.</p>
+                <p class="skills-highlight"><b>This site also aims to demonstrate self-taught skills in HTML, CSS and JavaScript. (The code for the site is available in the projects section, too.)</b></p>
+                
+                <div id="social-links-container">
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link">GitHub</a>
+                    <span class="link-separator">•</span>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">LinkedIn</a>
+                    <span class="link-separator">•</span>
+                    <a href="resume-2026.pdf" target="_blank" id="resume" class="social-link">Resume</a>
                 </div>
+
                 <div id="buttons-container">
                     <button id="projects" class="buttons-style">Independent Projects</button>
                     <button id="writing" class="buttons-style">Writing & Research</button>
                 </div>
             </div>
-        
+
             <div class="photo-sidebar-container">
                 <button id="random-photo-btn">See my cat</button>
                 <div id="photo-display-area"></div>
             </div>
+
         </div>
 
-        <div id="writing-text" class="invisible">
-            <div class="constant-medium"> 
-                <button id="writing-back-button" class="backbutton"><b>&#8963</b></button>
-                <br> 
+        <div id="dynamic-lower-drawer" class="invisible constant-medium">
+            <button class="backbutton" id="global-back-btn">←</button>
+            
+            <div id="projects-content" class="invisible grid-wrapper">
+                <div class="content-item-row">
+                    <div class="item-text">
+                        <a href="#" class="item-link">"Interactive Global Trade Map"</a> — Custom D3.js data parsing and visualization dashboard.
+                    </div>
+                    <div class="item-image-placeholder">[Image 1]</div>
+                </div>
+                <div class="content-item-row">
+                    <div class="item-text">
+                        <a href="#" class="item-link">"Public Records Scraping Pipeline"</a> — Automated Python scraper targeting municipal data dumps.
+                    </div>
+                    <div class="item-image-placeholder">[Image 2]</div>
+                </div>
+            </div>
+
+            <div id="writing-menu" class="invisible">
                 <div class="writing-buttons">
-                    <button class="buttons-style" id="writing-journalism">Journalism</button>
-                    <button class="buttons-style" id="writing-academic">Academic</button>
-                </div>
-                
-                <div id="journalism-publications" class="invisible" style="flex-direction: column; width: 100%; margin-top: 30px;">
-                    <ul style="list-style-type: none; padding: 0; margin: 0; width: 100%;">
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/article1" target="_blank" style="color: inherit; text-decoration: underline;">"Data Journalism Trends in 2026"</a> — The Daily Chronicle</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 1]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/article2" target="_blank" style="color: inherit; text-decoration: underline;">"How Local Newsrooms Navigate Automation"</a> — Media Review Quarterly</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 2]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/article3" target="_blank" style="color: inherit; text-decoration: underline;">"The Impact of Public Records Access on Modern Investigative Reporting"</a> — Global Journalist</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 3]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/article4" target="_blank" style="color: inherit; text-decoration: underline;">"AI in the Newsroom: Ethics and Efficacy"</a> — Tech Journalism Review</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 4]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/article5" target="_blank" style="color: inherit; text-decoration: underline;">"Climate Reporting on a Local Scale"</a> — Environmental Post</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 5]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/article6" target="_blank" style="color: inherit; text-decoration: underline;">"Visualizing Economics: Making Data Accessible"</a> — Financial Times Forum</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 6]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/article7" target="_blank" style="color: inherit; text-decoration: underline;">"The Rise of Investigative Podcasts"</a> — Audio Waves Magazine</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 7]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/article8" target="_blank" style="color: inherit; text-decoration: underline;">"Sourcing in the Digital Age: Verifying Crowdsourced Info"</a> — Truth and Media</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 8]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/article9" target="_blank" style="color: inherit; text-decoration: underline;">"The Future of Hyperlocal News Outlets"</a> — Community Voice Press</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 9]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/article10" target="_blank" style="color: inherit; text-decoration: underline;">"Data Scraping for Investigative Reporters"</a> — Open Source Gazette</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 10]</div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="academic-publications" class="invisible" style="flex-direction: column; width: 100%; margin-top: 30px;">
-                    <ul style="list-style-type: none; padding: 0; margin: 0; width: 100%;">
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/academic1" target="_blank" style="color: inherit; text-decoration: underline;">"A Quantitative Analysis of Media Polarization"</a> — Journal of Communication</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 1]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/academic2" target="_blank" style="color: inherit; text-decoration: underline;">"Algorithmic Agenda Setting in Local News Ecosystems"</a> — Digital Journalism Studies</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 2]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/academic3" target="_blank" style="color: inherit; text-decoration: underline;">"The Evolution of Public Records Laws: 1970-2026"</a> — Legal Information Quarterly</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 3]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/academic4" target="_blank" style="color: inherit; text-decoration: underline;">"Natural Language Processing in Investigative Workflows"</a> — Computational Journalism Review</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 4]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/academic5" target="_blank" style="color: inherit; text-decoration: underline;">"Trust in Automated News: A Cross-National Study"</a> — International Journal of Press/Politics</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 5]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/academic6" target="_blank" style="color: inherit; text-decoration: underline;">"Mapping Data Deserts in Municipal Open Data Portals"</a> — Governance & Information Studies</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 6]</div>
-                        </li>
-                    </ul>
+                    <button id="journalism-btn" class="buttons-style">Journalism</button>
+                    <button id="academic-btn" class="buttons-style">Academic</button>
                 </div>
             </div>
-        </div>
 
-        <div id="project-text" class="invisible">
-            <div class="constant-medium"> 
-                <button id="project-back-button" class="backbutton"><b>&#8963</b></button>
-                <br> 
-                
-                <div id="project-list-container" style="display: flex; flex-direction: column; width: 100%; margin-top: 10px;">
-                    <ul style="list-style-type: none; padding: 0; margin: 0; width: 100%;">
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/project1" target="_blank" style="color: inherit; text-decoration: underline;">"Interactive Global Trade Map"</a> — Custom D3.js data parsing and visualization dashboard.</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 1]</div>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
-                            <span style="flex: 1; padding-right: 20px; text-align: left;"><a href="https://example.com/project2" target="_blank" style="color: inherit; text-decoration: underline;">"Public Records Scraping Pipeline"</a> — Automated Python scraper targeting municipal data dumps.</span>
-                            <div style="flex: 0 0 150px; height: 100px; background-color: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center;">[Image 2]</div>
-                        </li>
-                    </ul>
-                </div>
+            <div id="journalism-content" class="invisible grid-wrapper">
+                <div class="submenu-header-title">Journalism Portfolio</div>
+                <div class="content-item-row"><div class="item-text"><a href="https://www.thedp.com/article/2024/05/campus-protests-generation-divide-israel-palestine" class="item-link">On-campus protests reflect stark generational divide on Israel-Palestine</a> — Daniel J. Hopkins and Gall Sigler, Daily Pennsylvanian, May 2, 2024</div><div class="item-image-placeholder"><img src="project-snippets/hopkins-sigler-israel-palestine-2024.png" class="portfolio-row-image"></div></div>
+                <div class="content-item-row"><div class="item-text"><a href="https://forward.com/news/556191/booksmiles-book-bank-philadelphia-jewish-chabad-larry-abrams/" class="item-link">Inspired by Chabad and a teenage mom, he’s given more than a million books to kids in need</a> — Gall Sigler, The Forward, Aug 3, 2023</div><div class="item-image-placeholder"><img src="project-snippets/booksmiles.png" class="portfolio-row-image"></div></div>
+                <div class="content-item-row"><div class="item-text"><a href="https://www.thedp.com/article/2024/05/campus-protests-generation-divide-israel-palestine" class="item-link">On-campus protests reflect stark generational divide on Israel-Palestine</a> — Daniel J. Hopkins and Gall Sigler, May 2, 2024</div><div class="item-image-placeholder"><img src="project-snippets/hopkins-sigler-israel-palestine-2024.png" class="portfolio-row-image"></div></div>
+                <div class="content-item-row"><div class="item-text"><a href="https://www.thedp.com/article/2024/05/campus-protests-generation-divide-israel-palestine" class="item-link">On-campus protests reflect stark generational divide on Israel-Palestine</a> — Daniel J. Hopkins and Gall Sigler, May 2, 2024</div><div class="item-image-placeholder"><img src="project-snippets/hopkins-sigler-israel-palestine-2024.png" class="portfolio-row-image"></div></div>
+                <div class="content-item-row"><div class="item-text"><a href="https://www.thedp.com/article/2024/05/campus-protests-generation-divide-israel-palestine" class="item-link">On-campus protests reflect stark generational divide on Israel-Palestine</a> — Daniel J. Hopkins and Gall Sigler, May 2, 2024</div><div class="item-image-placeholder"><img src="project-snippets/hopkins-sigler-israel-palestine-2024.png" class="portfolio-row-image"></div></div>
+                <div class="content-item-row"><div class="item-text"><a href="https://www.thedp.com/article/2024/05/campus-protests-generation-divide-israel-palestine" class="item-link">On-campus protests reflect stark generational divide on Israel-Palestine</a> — Daniel J. Hopkins and Gall Sigler, May 2, 2024</div><div class="item-image-placeholder"><img src="project-snippets/hopkins-sigler-israel-palestine-2024.png" class="portfolio-row-image"></div></div>
+                <div class="content-item-row"><div class="item-text"><a href="https://www.thedp.com/article/2024/05/campus-protests-generation-divide-israel-palestine" class="item-link">On-campus protests reflect stark generational divide on Israel-Palestine</a> — Daniel J. Hopkins and Gall Sigler, May 2, 2024</div><div class="item-image-placeholder"><img src="project-snippets/hopkins-sigler-israel-palestine-2024.png" class="portfolio-row-image"></div></div>
+                <div class="content-item-row"><div class="item-text"><a href="https://www.thedp.com/article/2024/05/campus-protests-generation-divide-israel-palestine" class="item-link">On-campus protests reflect stark generational divide on Israel-Palestine</a> — Daniel J. Hopkins and Gall Sigler, May 2, 2024</div><div class="item-image-placeholder"><img src="project-snippets/hopkins-sigler-israel-palestine-2024.png" class="portfolio-row-image"></div></div>
+                <div class="content-item-row"><div class="item-text"><a href="https://www.thedp.com/article/2024/05/campus-protests-generation-divide-israel-palestine" class="item-link">On-campus protests reflect stark generational divide on Israel-Palestine</a> — Daniel J. Hopkins and Gall Sigler, May 2, 2024</div><div class="item-image-placeholder"><img src="project-snippets/hopkins-sigler-israel-palestine-2024.png" class="portfolio-row-image"></div></div>
+                <div class="content-item-row"><div class="item-text"><a href="https://www.thedp.com/article/2024/05/campus-protests-generation-divide-israel-palestine" class="item-link">On-campus protests reflect stark generational divide on Israel-Palestine</a> — Daniel J. Hopkins and Gall Sigler, May 2, 2024</div><div class="item-image-placeholder"><img src="project-snippets/hopkins-sigler-israel-palestine-2024.png" class="portfolio-row-image"></div></div>
             </div>
+
+            <div id="academic-content" class="invisible grid-wrapper">
+                <div class="submenu-header-title">Academic Publications</div>
+                <div class="content-item-row"><div class="item-text"><a href="#" class="item-link">Machine Learning in Predictive Sociology</a> — Peer reviewed journal entry.</div><div class="item-image-placeholder">[Paper 1]</div></div>
+                <div class="content-item-row"><div class="item-text"><a href="#" class="item-link">Algorithmic Bias in Algorithmic Sentencing</a> — Quantitative critique of models.</div><div class="item-image-placeholder">[Paper 2]</div></div>
+                <div class="content-item-row"><div class="item-text"><a href="#" class="item-link">Network Graph Frameworks for Global Trade</a> — Spatial economics analysis paper.</div><div class="item-image-placeholder">[Paper 3]</div></div>
+                <div class="content-item-row"><div class="item-text"><a href="#" class="item-link">Urban Density and Resource Efficiency Modalities</a> — Statistical tracking data.</div><div class="item-image-placeholder">[Paper 4]</div></div>
+                <div class="content-item-row"><div class="item-text"><a href="#" class="item-link">Computational Social Science Methodologies</a> — Meta-analysis of open scrapers.</div><div class="item-image-placeholder">[Paper 5]</div></div>
+                <div class="content-item-row"><div class="item-text"><a href="#" class="item-link">Demographic Shift Analysis in Metropolitan Nodes</a> — Longitudinal census study.</div><div class="item-image-placeholder">[Paper 6]</div></div>
+            </div>
+
         </div>
 
-        <script src="logic.js"></script>
-    </body>
+    </div>
+
+    <script src="logic.js"></script>
+</body>
 </html>
