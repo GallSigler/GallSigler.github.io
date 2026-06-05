@@ -71,7 +71,7 @@ const randomPhotoBtn = document.getElementById("random-photo-btn");
 const photoDisplayArea = document.getElementById("photo-display-area");
 
 randomPhotoBtn.addEventListener("click", function() {
-    const totalPhotosInFolder = 12; 
+    const totalPhotosInFolder = 18; 
     const randomNumber = Math.floor(Math.random() * totalPhotosInFolder) + 1;
     const chosenPhoto = `gal${randomNumber}.jpg`;    
     
